@@ -44,14 +44,7 @@
             backdrop-filter: blur(10px);
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+       
 
         .nav-links {
             display: flex;
@@ -513,6 +506,80 @@
             font-size: 0.8rem;
         }
 
+         /* Certificats Section */
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.certificate-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.certificate-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-img img {
+    transform: scale(1.05);
+}
+
+.certificate-info {
+    padding: 1.5rem;
+}
+
+.certificate-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.certificate-info p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .certificates-container {
+        grid-template-columns: 1fr;
+    }
+}
+
         /* Contact Section */
         .contact {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -594,6 +661,7 @@
             transform: translateY(-5px);
         }
 
+
         /* Footer */
         footer {
             text-align: center;
@@ -647,13 +715,14 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">Portfolio</div>
+       
         <div class="nav-links">
             <a href="#about">À propos</a>
             <a href="#formation">Formation</a>
             <a href="#competences">Compétences</a>
             <a href="#experience">Expérience</a>
             <a href="#projets">Projets</a>
+            <a href="#Certificats">Certificats:</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -891,6 +960,84 @@ et conception de systèmes d’alerte basés sur des capteurs</p>
             </div>
         </div>
     </section>
+<!-- Certificats Section -->
+<section id="Certificats">
+    <h2 class="section-title">Mes Certificats</h2>
+    <div class="certificates-container">
+        <!-- Certificat 1 -->
+        <div class="certificate-card">
+            <div class="certificate-img">
+                <img src="chemin-vers-image-efset.jpg" alt="EF SET English Certificate">
+            </div>
+            <div class="certificate-info">
+                <h3>EF SET English Certificate</h3>
+                <p>B2 Upper Intermediate (60/100)</p>
+                <a href="#" class="view-btn">Voir le certificat</a>
+            </div>
+        </div>
+
+        <!-- Certificat 2 -->
+        <div class="certificate-card">
+            <div class="certificate-img">
+                <img src="chemin-vers-image-sap-mm.jpg" alt="SAP MM Certification">
+            </div>
+            <div class="certificate-info">
+                <h3>SAP MM End-User Certification</h3>
+                <p>Gestion des approvisionnements</p>
+                <a href="#" class="view-btn">Voir le certificat</a>
+            </div>
+        </div>
+
+        <!-- Certificat 3 -->
+        <div class="certificate-card">
+            <div class="certificate-img">
+                <img src="chemin-vers-image-sap-log.jpg" alt="SAP Logistique">
+            </div>
+            <div class="certificate-info">
+                <h3>SAP Logistique</h3>
+                <p>MM, PP, SD</p>
+                <a href="#" class="view-btn">Voir le certificat</a>
+            </div>
+        </div>
+
+        <!-- Certificat 4 -->
+        <div class="certificate-card">
+            <div class="certificate-img">
+                <img src="chemin-vers-image-excel.jpg" alt="Excel Certification">
+            </div>
+            <div class="certificate-info">
+                <h3>Excel Skills for Business</h3>
+                <p>Niveau Avancé</p>
+                <a href="#" class="view-btn">Voir le certificat</a>
+            </div>
+        </div>
+
+        <!-- Certificat 5 -->
+        <div class="certificate-card">
+            <div class="certificate-img">
+                <img src="chemin-vers-image-python.jpg" alt="Python Certification">
+            </div>
+            <div class="certificate-info">
+                <h3>Sampling in Python</h3>
+                <p>Analyse de données</p>
+                <a href="#" class="view-btn">Voir le certificat</a>
+            </div>
+        </div>
+
+        <!-- Certificat 6 -->
+        <div class="certificate-card">
+            <div class="certificate-img">
+                <img src="chemin-vers-image-softskills.jpg" alt="Soft Skills Certification">
+            </div>
+            <div class="certificate-info">
+                <h3>Mastering Soft Skills</h3>
+                <p>Compétences comportementales</p>
+                <a href="#" class="view-btn">Voir le certificat</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
     <!-- Contact Section -->
