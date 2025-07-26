@@ -331,19 +331,18 @@
 
         /* Compétences Section */
         .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
         .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
 
         .skill-category:hover {
             transform: translateY(-10px);
@@ -351,17 +350,25 @@
         }
 
         .skill-category h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+}
         .skill-category h3 i {
             color: var(--primary);
         }
-
+.skills-list {
+    list-style: none;
+}
+.skills-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
         .skill-bar {
             margin-bottom: 1.5rem;
         }
@@ -379,11 +386,72 @@
             overflow: hidden;
         }
 
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            border-radius: 4px;
-        }
+       .skills-list i {
+    color: var(--primary);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.skill-item {
+    background: rgba(110, 69, 226, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.skill-item span {
+    display: block;
+    font-weight: 500;
+}
+
+.skill-item small {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 0.3rem;
+}
+
+.language-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.language {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.language span {
+    font-weight: 500;
+}
+
+.language .level {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-style: italic;
+}
+
+        
 
         /* Expérience Section */
         .experience-container {
@@ -585,6 +653,7 @@
             <a href="#formation">Formation</a>
             <a href="#competences">Compétences</a>
             <a href="#experience">Expérience</a>
+            <a href="#projets">Projets</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -646,105 +715,86 @@ compétences en ingénierie et en logistique industrielle.</p>
         </div>
     </section>
 
-    <!-- Compétences Section -->
-    <section id="competences">
-        <h2 class="section-title">Mes Compétences</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Développement Frontend</h3>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>HTML/CSS</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 95%"></div>
-                    </div>
+   <!-- Compétences Section -->
+<section id="competences">
+    <h2 class="section-title">Mes Compétences</h2>
+    <div class="skills-container">
+        <!-- Compétences Techniques -->
+        <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Techniques</h3>
+            <ul class="skills-list">
+                <li><i class="fas fa-check-circle"></i> Analyse de données avec Python et R Studio</li>
+                <li><i class="fas fa-check-circle"></i> Microsoft Office (Excel, Word, PowerPoint)</li>
+                <li><i class="fas fa-check-circle"></i> Utilisation des ERP (SAP MM)</li>
+                <li><i class="fas fa-check-circle"></i> Analyse et Gestion Organisationnelle</li>
+                <li><i class="fas fa-check-circle"></i> Régulation Industrielle</li>
+                <li><i class="fas fa-check-circle"></i> Conception Industrielle (Catia)</li>
+            </ul>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-category">
+            <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-users"></i>
+                    <span>Collaboration</span>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>JavaScript</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 90%"></div>
-                    </div>
+                <div class="skill-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Gestion de Temps</span>
+                    <small>(Pomodoro, Matrice d'Eisenhower)</small>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>React</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 85%"></div>
-                    </div>
+                <div class="skill-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Gestion de stress</span>
+                    <small>(Méthode des 4 A)</small>
                 </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-server"></i> Développement Backend</h3>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>Node.js</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 80%"></div>
-                    </div>
+                <div class="skill-item">
+                    <i class="fas fa-user-check"></i>
+                    <span>Autonomie</span>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>Python</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 75%"></div>
-                    </div>
+                <div class="skill-item">
+                    <i class="fas fa-laptop"></i>
+                    <span>Digital Skills Niveau 2</span>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>Base de données</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 85%"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-paint-brush"></i> Design</h3>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>UI/UX Design</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>Figma</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-info">
-                        <span>Photoshop</span>
-                        <span>70%</span>
-                    </div>
-                    <div class="skill-bar-container">
-                        <div class="skill-level" style="width: 70%"></div>
-                    </div>
+                <div class="skill-item">
+                    <i class="fas fa-building"></i>
+                    <span>Culture d'entreprise</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Expérience Section -->
-    <section id="experience">
+        <!-- Compétences Linguistiques -->
+        <div class="skill-category">
+            <h3><i class="fas fa-language"></i> Linguistiques</h3>
+            <div class="language-skills">
+                <div class="language">
+                    <span>Arabe</span>
+                    <div class="level">Langue maternelle</div>
+                </div>
+                <div class="language">
+                    <span>Français</span>
+                    <div class="level">Courant (C1/C2)</div>
+                </div>
+                <div class="language">
+                    <span>Anglais</span>
+                    <div class="level">B2 certifié</div>
+                </div>
+                <div class="language">
+                    <span>Allemand/Espagnol</span>
+                    <div class="level">Notions de base</div>
+                </div>
+                <div class="language">
+                    <span>Amazigh</span>
+                    <div class="level">Parlé</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- projet Section -->
+    <section id="projets">
         <h2 class="section-title">PROJETS</h2>
         <div class="experience-container">
             <div class="experience-item">
@@ -784,6 +834,64 @@ et conception de systèmes d’alerte basés sur des capteurs</p>
             
         </div>
     </section>
+
+ <!-- Expérience Section -->
+
+ <section id="experience">
+        <h2 class="section-title">Expérience</h2>
+        <div class="experience-container">
+            <div class="experience-item">
+                <div class="experience-date">Juillet 2025</div>
+                <div class="experience-content">
+                    <h3 class="experience-company">Ocp </h3>
+                    
+                    <p class="experience-desc">stage d’initiation 
+
+
+                       
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">Mars 2025-Juin 2025</div>
+                <div class="experience-content " >
+                    <h3 class="experience-company">Essor Junior Entreprise</h3>
+                    
+                    <p class="experience-desc">Secretaire génerale </p>
+                    
+                </div>
+            </div>
+           
+             <div class="experience-item">
+                <div class="experience-date">Juin 2025- Aujourd’hui:</div>
+                <div class="experience-content " >
+                    <h3 class="experience-company">The Great debaters </h3>
+                    
+                    <p class="experience-desc">Responsable de cellule arabe</p>
+                    
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">Avril 2025 -Aujourd’hui</div>
+                <div class="experience-content " >
+                    <h3 class="experience-company">MUN </h3>
+                    
+                    <p class="experience-desc">Responsable des Reseaux sociaux </p>
+                    
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">Janvier 2025-Juin 2025</div>
+                <div class="experience-content " >
+                    <h3 class="experience-company">Esith Career center  </h3>
+                    
+                    <p class="experience-desc">Career Ambassador permanent</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact">
