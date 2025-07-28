@@ -685,6 +685,89 @@
     }
 }
 
+
+/* Réalisations Section */
+#realisations {
+    background: #ffffff;
+    padding: 5rem 2rem;
+}
+
+.realisations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.achievement-card {
+    display: flex;
+    background: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+.achievement-image {
+    flex: 1;
+    min-height: 300px;
+    background: #e0e0e0;
+}
+
+.achievement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.achievement-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.achievement-content h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.achievement-description {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.achievement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #3498db;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .achievement-card {
+        flex-direction: column;
+    }
+    
+    .achievement-image {
+        min-height: 200px;
+    }
+}
         /* Footer */
         footer {
             text-align: center;
@@ -1176,7 +1259,60 @@ et conception de systèmes d’alerte basés sur des capteurs</p>
     </div>
 </section>
 
+<!-- Réalisations Section -->
+<section id="realisations">
+    <div class="realisations-container">
+        <h2 class="section-title">Réalisations Clés</h2>
+        
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <!-- Remplacez par votre image du hackathon -->
+                <img src="DOC/hakathon.png" alt="Hackathon ESITH">
+            </div>
+            <div class="achievement-content">
+                <h3>Gagnant du Hackathon ESITH</h3>
+                <div class="achievement-meta">
+                  
+                    <span class="achievement-location">Laayoune</span>
+                </div>
+              
+                
+            </div>
+        </div>
+        
+<div class="achievement-card">
+            <div class="achievement-image">
+                <!-- Remplacez par votre image du hackathon -->
+                <img src="DOC/Green Inovators Showdown.jpg" alt="Hackathon ESITH">
+            </div>
+            <div class="achievement-content">
+                <h3>Participation aux Green Inovators Showdown  Esith</h3>
+                <div class="achievement-meta">
+                    
+                    <span class="achievement-location">Casablanca</span>
+                </div>
+               
+                
+            </div>
+        </div>
+    
 
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <!-- Remplacez par votre image du hackathon -->
+                <img src="DOC/Job fair.png" alt="Hackathon ESITH">
+            </div>
+            <div class="achievement-content">
+                <h3>career Ambassador en Job fair  Esith</h3>
+                <div class="achievement-meta">
+                    <span class="achievement-location">Casablanca</span>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
    <section id="contact">
@@ -1212,6 +1348,8 @@ et conception de systèmes d’alerte basés sur des capteurs</p>
         </div>
     </div>
 </section>
+
+
 
     <!-- Footer -->
      <footer class="bg-white text-[#142c48] py-6 border-t border-gray-200">
