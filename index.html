@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
         :root {
-            --primary: #6e45e2;
-            --secondary: #88d3ce;
-            --dark: #1a1a2e;
-            --light: #f9f9f9;
-            --accent: #ff7e5f;
+           --primary: #3B556D;   /* Nouvelle couleur principale */
+            --secondary: #5FC2BA; /* Nouvelle couleur secondaire */
+            --dark: #2D3748;
+            --light: #FFFFFF;     /* Arrière-plan blanc */
+            --accent: #3B556D;    /* Utilisation de la couleur primaire comme accent */
             --transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
         }
 
@@ -30,19 +30,90 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-        }
+        
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: #2c3e50;
+    color: white;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    height: 100%;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    margin: 0.3rem 0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #3498db;
+    transform: translateX(5px);
+}
+
+.nav-links a i {
+    width: 30px;
+    font-size: 1.1rem;
+    margin-right: 1rem;
+}
+
+.nav-links a span {
+    font-size: 0.95rem;
+}
+
+/* Bouton menu mobile */
+.mobile-menu-btn {
+    
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: #3498db;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive - Masquer le menu sur mobile */
+@media (max-width: 992px) {
+    nav {
+        transform: translateX(-100%);
+        width: 280px;
+    }
+    
+    nav.active {
+        transform: translateX(0);
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-links {
+        padding-top: 4rem;
+    }
+}
 
        
 
@@ -817,136 +888,123 @@
             }
         }
 
-        /* Section Contact */
-.contact-wrapper {
-    display: flex;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 2rem auto;
-    flex-wrap: wrap;
-}
+      /* Section Contact */
+        .contact-wrapper {
+            display: flex;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            flex-wrap: wrap;
+        }
 
-.contact-card, .social-card {
-    flex: 1;
-    min-width: 300px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+        .contact-card, .social-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(59, 85, 109, 0.1);
+        }
 
-.contact-method {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    color: inherit;
-}
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
 
-.contact-method i {
-    font-size: 1.2rem;
-    color: var(--primary);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .contact-method i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.contact-method a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .contact-method a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.contact-method a:hover {
-    color: var(--primary);
-}
+        .contact-method a:hover {
+            color: var(--primary);
+        }
 
-.cv-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.8rem 1.5rem;
-    background: var(--primary);
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    margin-top: 1rem;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
 
-.cv-download:hover {
-    background: var(--accent);
-    transform: translateY(-3px);
-}
+        .cv-download:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
 
-.social-card h3 {
-    margin-bottom: 1.5rem;
-    color: var(--primary);
-}
+        .social-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
 
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
-.social-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.8rem;
-    border-radius: 8px;
-    color: inherit;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
 
-.social-link:hover {
-    background: rgba(110, 69, 226, 0.1);
-}
+        .social-link:hover {
+            background: rgba(59, 85, 109, 0.1);
+        }
 
-.social-link i {
-    width: 40px;
-    height: 40px;
-    background: rgba(110, 69, 226, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    color: var(--primary);
-}
+        .social-link i {
+            width: 40px;
+            height: 40px;
+            background: rgba(59, 85, 109, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-wrapper {
-        flex-direction: column;
-    }
-    
-    .contact-card, .social-card {
-        min-width: 100%;
-    }
-}
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            
+            .contact-card, .social-card {
+                min-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-       
-        <div class="nav-links">
-            <a href="#about">À propos</a>
-            <a href="#formation">Formation</a>
-            <a href="#competences">Compétences</a>
-            <a href="#experience">Expérience</a>
-            <a href="#projets">Projets</a>
-            <a href="#Certificats">Certificats</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1314,86 +1372,74 @@ et conception de systèmes d’alerte basés sur des capteurs</p>
     </div>
 </section>
 
-    <!-- Contact Section -->
    <section id="contact">
-    <div class="contact">
-        <h2 class="section-title">Contactez-moi</h2>
-        <p class="contact-subtitle">Disponible pour de nouvelles opportunités, n'hésitez pas à me contacter.</p>
-        
-        <div class="contact-wrapper">
-            <div class="contact-card">
-                <div class="contact-method">
-                    <i class="fas fa-map-marker-alt contact-icon"></i>
-                    <span class="contact-text">Casablanca, Maroc</span>
+        <div class="contact">
+            <h2 class="section-title">Contactez-moi</h2>
+            <p class="contact-subtitle">Disponible pour de nouvelles opportunités, n'hésitez pas à me contacter.</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-card">
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span class="contact-text">Casablanca, Maroc</span>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:mustaphabaroudi833@gmail.com" class="contact-link">mustaphabaroudi833@gmail.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <a href="tel:+212697362759" class="contact-link">+212 697-362759</a>
+                    </div>
+                    
+                    <div class="contact-method social-method">
+                        <i class="fab fa-linkedin-in contact-icon"></i>
+                        <a href="https://www.linkedin.com/in/baroudi-mustapha-2a257a289/" class="contact-link" target="_blank">LinkedIn</a>
+                    </div>
+                    
+                    <a href="chemin/vers/cv.pdf" class="cv-download" download>
+                        <i class="fas fa-file-download"></i>
+                        <span>Télécharger mon CV</span>
+                    </a>
                 </div>
-                <div class="contact-method">
-                    <i class="fas fa-envelope contact-icon"></i>
-                    <a href="mailto:mustaphabaroudi833@gmail.com" class="contact-link">mustaphabaroudi833@gmail.com</a>
-                </div>
-                <div class="contact-method">
-                    <i class="fas fa-phone contact-icon"></i>
-                    <a href="tel:+212697362759" class="contact-link">+212 697-362759</a>
-                </div>
-                
-                <div class="contact-method social-method">
-                    <i class="fab fa-linkedin-in contact-icon"></i>
-                    <a href="https://www.linkedin.com/in/baroudi-mustapha-2a257a289/" class="contact-link" target="_blank">LinkedIn</a>
-                </div>
-                
-                <a href="chemin/vers/cv.pdf" class="cv-download" download>
-                    <i class="fas fa-file-download"></i>
-                    <span>Télécharger mon CV</span>
-                </a>
             </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- Footer -->
-     <footer class="bg-white text-[#142c48] py-6 border-t border-gray-200">
-      <div class="max-w-5xl mx-auto px-4 text-center">
-        <p class="flex items-center justify-center gap-1 flex-wrap">
-          <span>Made with</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 fill-current animate-pulse" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-          </svg>
-          <span>by</span>
-          <a href="mailto:ayaaatfaoui38@gmail.com" class="text-[#142c48] hover:text-[#acc9ea] transition-colors inline-flex items-center font-medium">
-            AATFAOUI AYA
-          </a>
-        </p>
-      </div>
+    <footer class="bg-[#3B556D] text-white py-6">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="flex items-center justify-center gap-1 flex-wrap">
+                <span>Made with</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 fill-current animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+                </svg>
+                <span>by</span>
+                <a href="mailto:ayaaatfaoui38@gmail.com" class="text-white hover:text-[#5FC2BA] transition-colors inline-flex items-center font-medium">
+                    AATFAOUI AYA
+                </a>
+            </p>
+        </div>
     </footer>
-
     <script>
-        // Simple animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('section').forEach(section => {
-                observer.observe(section);
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+    
+    // Ouvrir/fermer le menu mobile
+    menuBtn.addEventListener('click', function() {
+        nav.classList.toggle('active');
+    });
+    
+    // Fermer le menu après clic sur un lien (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 992) {
+                nav.classList.remove('active');
+            }
         });
+    });
+});
     </script>
 </body>
 </html>
