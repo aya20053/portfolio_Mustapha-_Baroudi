@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Professionnel</title>
+    <link rel="icon" type="image/png" href="DOC/LOGO.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+     <style>
         /* Variables et réinitialisation */
         :root {
             --primary: #3B556D;
@@ -557,8 +558,9 @@
         /* Projects Section */
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 30px;
+            justify-content: center;
         }
         
         .project-item {
@@ -567,6 +569,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             position: relative;
+            background: white;
         }
         
         .project-item:hover {
@@ -581,14 +584,29 @@
         }
         
         .project-content {
-            padding: 20px;
-            background: white;
+            padding: 25px;
         }
         
         .project-content h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--primary);
+        }
+        
+        .project-period {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .project-period i {
+            margin-right: 8px;
+        }
+        
+        .project-description {
+            margin-bottom: 15px;
+            color: var(--dark);
         }
         
         .project-tags {
@@ -600,7 +618,7 @@
         .project-tag {
             background: var(--secondary);
             color: white;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             margin-right: 10px;
@@ -774,6 +792,10 @@
             .formation-dot {
                 right: auto;
                 left: 22px;
+            }
+            
+            .projects-container {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -1128,48 +1150,38 @@
             
             <div class="projects-container">
                 <div class="project-item">
-                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Projet TIPE" class="project-img">
-                    <div class="project-content">
+                   <div class="project-content">
                         <h3>TIPE 2024 : Jeux et Sports</h3>
-                        <p><strong>Période:</strong> 02/2024 - 07/2024</p>
-                        <p>Application des théories académiques à une expérience concrète dans le domaine des jeux et sports, avec présentation devant un jury.</p>
+                        <p class="project-period"><i class="far fa-calendar-alt"></i> Février 2024 - Juillet 2024</p>
+                        <p class="project-description">Le projet TIPE de cette année a représenté une occasion précieuse d'appliquer les théories vues en cours à une expérience concrète. Ce travail m’a permis de renforcer ma confiance en moi devant un jury et de démontrer la valeur ajoutée de l’application des théories à des situations pratiques.</p>
+                        <p class="project-description">Ce projet a été couronné de succès, car il m'a permis de mettre en avant ma capacité à appliquer des théories complexes à des solutions pratiques. Cela a non seulement renforcé ma confiance en moi, mais m’a aussi permis de recevoir des retours positifs de la part du jury.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Recherche</span>
+                            <span class="project-tag">Recherche Appliquée</span>
                             <span class="project-tag">Analyse</span>
                             <span class="project-tag">Présentation</span>
+                            <span class="project-tag">Théories Complexes</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="project-item">
-                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Projet détection de gaz" class="project-img">
                     <div class="project-content">
                         <h3>Détection de gaz avec capteur MQ-135</h3>
-                        <p><strong>Période:</strong> 01/2025 - 02/2025</p>
-                        <p>Conception d'un système de détection de gaz pour mesurer la qualité de l'air avec Arduino, alertes LED/buzzer et simulation sur TinkerCad.</p>
-                        <div class="project-tags">
+                        <p class="project-period"><i class="far fa-calendar-alt"></i> Janvier 2025 - Février 2025</p>
+                        <p class="project-description">Réalisation d’un système de détection de gaz pour mesurer la qualité de l’air et identifier des gaz nocifs tels que le CO, NH₃, CO₂, benzène, fumée et alcool. Le projet a consisté à concevoir un circuit électronique intégrant un Arduino Uno et une LED et un buzzer pour les alertesà programmer le microcontrôleur pour interpréter les signaux du capteur, et à simuler le fonctionnement sur TinkerCad. Ce projet a permis de développer des compétences en programmation en Arduino IDE et conception de systèmes d’alerte basés sur des capteurs.</p>
+                       <div class="project-tags">
                             <span class="project-tag">Arduino</span>
                             <span class="project-tag">Électronique</span>
-                            <span class="project-tag">Programmation</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1715&q=80" alt="Projet génie industriel" class="project-img">
-                    <div class="project-content">
-                        <h3>Optimisation de processus industriel</h3>
-                        <p>Projet académique d'analyse et d'optimisation de processus de production industrielle avec indicateurs de performance.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Génie Industriel</span>
-                            <span class="project-tag">Optimisation</span>
-                            <span class="project-tag">Analyse</span>
+                            <span class="project-tag">Programmation C++</span>
+                            <span class="project-tag">Capteurs</span>
+                            <span class="project-tag">TinkerCad</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
     <section class="section" id="contact">
