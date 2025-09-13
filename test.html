@@ -458,6 +458,7 @@
             border-bottom: 2px solid var(--secondary);
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
         
         .skills-category h3 i {
@@ -623,6 +624,150 @@
             font-size: 0.8rem;
             margin-right: 10px;
             margin-bottom: 10px;
+        }
+        
+        /* Certificats Section */
+        .certificats-section {
+            background: linear-gradient(135deg, rgba(59, 85, 109, 0.05) 0%, rgba(95, 194, 186, 0.05) 100%);
+            padding: 80px 0;
+        }
+        
+        .certificats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .certificat-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .certificat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certificat-img-container {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .certificat-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--secondary);
+            transition: transform 0.5s ease;
+        }
+        
+        .certificat-img-container:hover .certificat-img {
+            transform: scale(1.05);
+        }
+        
+        .certificat-zoom-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(59, 85, 109, 0.7);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .certificat-img-container:hover .certificat-zoom-icon {
+            opacity: 1;
+        }
+        
+        .certificat-content {
+            padding: 20px;
+        }
+        
+        .certificat-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .certificat-issuer {
+            display: inline-block;
+            background: rgba(95, 194, 186, 0.15);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .certificat-date {
+            color: var(--dark);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Modal pour l'agrandissement des images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            display: block;
+            margin: 0 auto;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 5px;
+            animation: zoomIn 0.3s;
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: var(--secondary);
+            text-decoration: none;
         }
         
         /* Contact Section */
@@ -794,7 +939,8 @@
                 left: 22px;
             }
             
-            .projects-container {
+            .projects-container,
+            .certificats-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -841,6 +987,16 @@
             .skills-categories {
                 grid-template-columns: 1fr;
             }
+            
+            .modal-content {
+                max-width: 95%;
+            }
+            
+            .close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -853,7 +1009,8 @@
             }
             
             .projects-container,
-            .languages-container {
+            .languages-container,
+            .certificats-container {
                 grid-template-columns: 1fr;
             }
             
@@ -921,7 +1078,7 @@
                 <div class="about-text">
                     <h3>Qui suis-je ?</h3>
                     <p>Étudiant en cycle ingénieur en génie industriel à l'ESITH, avec une formation solide en Classes Préparatoires aux Grandes Écoles (filière MP).</p>
-                    <p> Doté de compétences techniques et analytiques, renforcées par des soft skills telles que la communication, le travail en équipe et la gestion du temps. Actuellement à la recherche de Stage d'observation pour développer d'avantage mes compétences en ingénierie et en logistique industrielle..</p>
+                    <p> Doté de compétences techniques et analytiques, renforcées par des soft skills telles que la communication, the travail en équipe et la gestion du temps. Actuellement à la recherche de Stage d'observation pour développer d'avantage mes compétences en ingénierie et en logistique industrielle..</p>
                     
                     <ul class="info-list">
                         <li><strong>Email :</strong> mustaphabaroudi833@gmail.com</li>
@@ -1182,6 +1339,134 @@
         </div>
     </section>
 
+    <!-- Certificats Section -->
+    <section class="certificats-section" id="certificats">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes Certificats</h2>
+            </div>
+            
+            <div class="certificats-container">
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/English Certificate.jpg" alt="EF SET English Certificate" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>EF SET English Certificate</h3>
+                        <span class="certificat-issuer">EF Standard English Test</span>
+                        <p class="certificat-date">Niveau B2 certifié</p>
+                    </div>
+                </div>
+                
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/SAP MM End‑User Certification.jpg" alt="SAP MM End-User Certification" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>SAP MM End-User Certification</h3>
+                        <span class="certificat-issuer">SAP</span>
+                        <p class="certificat-date">Certification utilisateur final en gestion des matériaux</p>
+                    </div>
+                </div>
+                
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/PKConsulting_Formation SAP Logistique_Certificat BAROUDI Mustapha (1)_page-0001.jpg" alt="SAP Logistique" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>SAP Logistique</h3>
+                        <span class="certificat-issuer">SAP</span>
+                        <p class="certificat-date">Gestion de la chaîne logistique</p>
+                    </div>
+                </div>
+                
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/Excel Skills for Business.jpg" alt="Excel Skills for Business" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>Excel Skills for Business</h3>
+                        <span class="certificat-issuer">Microsoft</span>
+                        <p class="certificat-date">Maîtrise avancée d'Excel pour les entreprises</p>
+                    </div>
+                </div>
+                
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/certificate_python.jpg" alt="Sampling in Python" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>Sampling in Python</h3>
+                        <span class="certificat-issuer">Data Science Institute</span>
+                        <p class="certificat-date">Techniques d'échantillonnage avec Python</p>
+                    </div>
+                </div>
+                
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/soft skills.jpg" alt="Mastering Soft Skills" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>Mastering Soft Skills</h3>
+                        <span class="certificat-issuer">Professional Development Institute</span>
+                        <p class="certificat-date">Compétences relationnelles avancées</p>
+                    </div>
+                </div>
+                
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/Data Analyst in Python.jpg" alt="Data Analyst in Python" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>Data Analyst in Python</h3>
+                        <span class="certificat-issuer">DataCamp</span>
+                        <p class="certificat-date">Analyse de données avec Python</p>
+                    </div>
+                </div>
+                
+                <div class="certificat-item">
+                    <div class="certificat-img-container">
+                        <img src="DOC/Six Sigma.jpg" alt="Six Sigma and the Organization (Advanced)" class="certificat-img">
+                        <div class="certificat-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="certificat-content">
+                        <h3>Six Sigma and the Organization (Advanced)</h3>
+                        <span class="certificat-issuer">Six Sigma Institute</span>
+                        <p class="certificat-date">Niveau avancé - Ceinture verte</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour l'agrandissement des images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
     <!-- Contact Section -->
     <section class="section" id="contact">
@@ -1270,6 +1555,7 @@
                         <li><a href="#about">À propos</a></li>
                         <li><a href="#formation">Formation</a></li>
                         <li><a href="#projects">Projets</a></li>
+                        <li><a href="#certificats">Certificats</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1354,6 +1640,39 @@
         window.addEventListener('scroll', animateFormationItems);
         // Initialiser au chargement de la page
         window.addEventListener('load', animateFormationItems);
+        
+        // Fonctionnalité de zoom sur les images de certificats
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeModal = document.getElementsByClassName("close")[0];
+        
+        // Ajouter un écouteur d'événement à toutes les images de certificats
+        document.querySelectorAll('.certificat-img').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+            });
+        });
+        
+        // Fermer la modal en cliquant sur la croix
+        closeModal.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+        
+        // Fermer la modal en cliquant en dehors de l'image
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+        
+        // Fermer la modal avec la touche Échap
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && modal.style.display === "block") {
+                modal.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
