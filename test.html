@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="DOC/LOGO.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-     <style>
+    <style>
         /* Variables et réinitialisation */
         :root {
             --primary: #3B556D;
@@ -33,6 +33,7 @@
             color: var(--dark);
             background-color: var(--light);
             overflow-x: hidden;
+            margin: 25px;
         }
         
         a {
@@ -166,6 +167,8 @@
         .hamburger {
             display: none;
             cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
         }
         
         /* Hero Section */
@@ -222,14 +225,14 @@
         
         .hero-highlight {
             color: var(--secondary);
-            font-weight: 500;
+            font-weight: 600;
         }
         
         /* About Section */
         .about-content {
             display: flex;
             align-items: center;
-            gap:4rem;
+            gap: 4rem;
         }
         
         .about-img {
@@ -433,8 +436,9 @@
         .skills-categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 20px;
             margin-bottom: 50px;
+            margin-right: 0px;
         }
         
         .skills-category {
@@ -514,52 +518,200 @@
             opacity: 0.8;
         }
         
-       /* Languages Section - Intégrée dans Skills */
-.languages-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.language-item {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-    transition: var(--transition);
-    text-align: center;
-}
-
-.language-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.language-flag {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.language-item h3 {
-    font-size: 1rem;
-    color: var(--primary); /* Changé pour utiliser la couleur bleue définie dans les variables */
-    margin-bottom: 7px;
-}
-
-.language-level {
-    display: inline-block;
-    background: rgba(95, 194, 186, 0.15);
-    color: var(--secondary);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: 500;
-    font-size: 0.9rem;
-}
+        /* Languages Section */
+        .languages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .language-item {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .language-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-flag {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .language-item h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 7px;
+        }
+        
+        .language-level {
+            display: inline-block;
+            background: rgba(95, 194, 186, 0.15);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Experience Section */
+        .experience-container {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .experience-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 4px;
+            background: var(--primary);
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+        
+        .experience-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+            position: relative;
+            margin-bottom: 60px;
+            width: 50%;
+            left: 0;
+        }
+        
+        .experience-item:nth-child(even) {
+            left: 50%;
+            justify-content: flex-start;
+            padding-left: 30px;
+            padding-right: 0;
+        }
+        
+        .experience-content {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            width: 100%;
+            max-width: 400px;
+            border-left: 5px solid var(--secondary);
+            position: relative;
+        }
+        
+        .experience-item:nth-child(even) .experience-content {
+            border-left: none;
+            border-right: 5px solid var(--secondary);
+        }
+        
+        .experience-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--primary);
+        }
+        
+        .experience-item:nth-child(even) .experience-content:hover {
+            border-left: none;
+            border-right: 5px solid var(--primary);
+        }
+        
+        .experience-date {
+            position: absolute;
+            width: 140px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(59, 85, 109, 0.3);
+            top: -20px;
+            right: -80px;
+            transition: var(--transition);
+            z-index: 2;
+            font-size: 0.66rem;
+             padding: 10px;
+        }
+        
+        .experience-item:nth-child(even) .experience-date {
+            right: auto;
+            left: -50px;
+        }
+        
+        .experience-item:hover .experience-date {
+            transform: scale(1.05);
+            background: var(--secondary);
+        }
+        
+        .experience-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 30px;
+            right: -10px;
+            box-shadow: 0 0 0 3px var(--primary);
+            z-index: 2;
+            transition: var(--transition);
+            
+        }
+        
+        .experience-item:nth-child(even) .experience-dot {
+            right: auto;
+            left: -10px;
+        }
+        
+        .experience-item:hover .experience-dot {
+            background: var(--secondary);
+            box-shadow: 0 0 0 3px var(--secondary);
+        }
+        
+        .experience-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .experience-company {
+            display: inline-block;
+            background: rgba(59, 85, 109, 0.15);
+            color: var(--primary);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .experience-description {
+            color: var(--dark);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(59, 85, 109, 0.1);
+        }
+        
         /* Projects Section */
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             justify-content: center;
         }
@@ -586,6 +738,7 @@
         
         .project-content {
             padding: 25px;
+            position: relative;
         }
         
         .project-content h3 {
@@ -719,7 +872,123 @@
             opacity: 0.8;
         }
         
-        /* Modal pour l'agrandissement des images */
+        /* Achievements Section */
+        .achievements-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(59, 85, 109, 0.03) 0%, rgba(95, 194, 186, 0.03) 100%);
+        }
+
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-img-container {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .achievement-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .achievement-item:hover .achievement-img {
+            transform: scale(1.05);
+        }
+
+        .achievement-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(59, 85, 109, 0.8) 0%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievement-item:hover .achievement-overlay {
+            opacity: 1;
+        }
+
+        .achievement-overlay h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .achievement-zoom-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(59, 85, 109, 0.7);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .achievement-img-container:hover .achievement-zoom-icon {
+            opacity: 1;
+        }
+
+        .achievement-content {
+            padding: 25px;
+        }
+
+        .achievement-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .achievement-content p {
+            color: var(--dark);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .achievement-date {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
@@ -769,80 +1038,208 @@
             color: var(--secondary);
             text-decoration: none;
         }
-        
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
+
+        .modal-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            font-size: 1.2rem;
         }
         
-        .contact-info {
+        /* Modal Styles pour les réalisations */
+        .achievement-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s;
+        }
+        
+        .achievement-modal-content {
+            display: block;
+            margin: 0 auto;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 5px;
+            animation: zoomIn 0.3s;
+        }
+        
+        .achievement-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .achievement-close:hover,
+        .achievement-close:focus {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .achievement-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: auto;
+            font-size: 1.2rem;
+        }
+        
+        /* Titre de section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        
+        
+       
+        
+        .contact-direct {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        
+        /* Conteneur de contact */
+        .contact-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 50px;
             display: flex;
             flex-direction: column;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--secondary);
+        }
+        
+        /* Informations de contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
         .contact-item {
             display: flex;
-            align-items: center;
-            margin-bottom: 25px;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--secondary);
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-        
-        .contact-item:hover .contact-icon {
             background: var(--secondary);
-            transform: scale(1.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
         
         .contact-text h3 {
             font-size: 1.2rem;
-            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
         }
         
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        .contact-text p {
+            color: #6c757d;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
         
-        .form-group {
-            margin-bottom: 20px;
+        /* Bouton de téléchargement */
+        .cv-download {
+            text-align: center;
+            margin-top: 20px;
         }
         
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: var(--transition);
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
         }
         
-        .form-control:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(95, 194, 186, 0.2);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
         }
         
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 30px 20px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
         }
-        
         /* Footer */
         footer {
             background: var(--primary);
@@ -903,6 +1300,12 @@
         }
         
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+        
         @media (max-width: 992px) {
             .hero-content h1 {
                 font-size: 2.8rem;
@@ -913,15 +1316,13 @@
                 gap: 2rem;
             }
             
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .formation-timeline::before {
+            .formation-timeline::before,
+            .experience-timeline::before {
                 left: 30px;
             }
             
-            .formation-item {
+            .formation-item,
+            .experience-item {
                 width: 100%;
                 left: 0 !important;
                 padding-right: 0;
@@ -929,12 +1330,16 @@
                 justify-content: flex-start;
             }
             
-            .formation-date {
+            .formation-date,
+            .experience-date {
                 right: auto;
                 left: -90px;
+                width: 120px;
+                font-size: 0.8rem;
             }
             
-            .formation-dot {
+            .formation-dot,
+            .experience-dot {
                 right: auto;
                 left: 22px;
             }
@@ -980,12 +1385,21 @@
                 padding: 60px 0;
             }
             
-            .formation-content {
+            .formation-content,
+            .experience-content {
                 padding: 20px;
             }
             
             .skills-categories {
                 grid-template-columns: 1fr;
+            }
+            
+            .achievements-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .achievement-img-container {
+                height: 200px;
             }
             
             .modal-content {
@@ -996,6 +1410,31 @@
                 top: 10px;
                 right: 20px;
                 font-size: 30px;
+            }
+            
+            /* Ajustements pour mobile */
+            .formation-timeline::before,
+            .experience-timeline::before {
+                left: 20px;
+            }
+            
+            .formation-item,
+            .experience-item {
+                padding-left: 50px;
+            }
+            
+            .formation-date,
+            .experience-date {
+                width: 100px;
+                height: 35px;
+                font-size: 0.6rem;
+                left: -70px;
+                margin-right: 10px;
+            }
+            
+            .formation-content h3,
+            .experience-content h3 {
+                font-size: 1.3rem;
             }
         }
         
@@ -1014,21 +1453,135 @@
                 grid-template-columns: 1fr;
             }
             
-            .formation-item {
-                padding-left: 50px;
+            .formation-item,
+            .experience-item {
+                padding-left: 40px;
             }
             
-            .formation-date {
-                width: 100px;
-                height: 35px;
-                font-size: 0.8rem;
-                left: -70px;
+            .formation-date,
+            .experience-date {
+                width: 90px;
+                height: 30px;
+                font-size: 0.5rem;
+                left: -60px;
+                margin-right: 10px;
             }
             
-            .formation-content h3 {
-                font-size: 1.3rem;
+            .formation-content h3,
+            .experience-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .formation-content,
+            .experience-content {
+                padding: 15px;
+            }
+            
+            .formation-description,
+            .experience-description {
+                font-size: 0.9rem;
+            }
+            
+            .formation-dot,
+            .experience-dot {
+                width: 16px;
+                height: 16px;
+                top: 25px;
+                left: 18px;
             }
         }
+
+        /* Version mobile */
+@media (max-width: 768px) {
+    .contact-direct {
+        font-size: 0.9rem;
+    }
+    
+    .contact-container {
+        padding: 25px 20px;
+        gap: 25px;
+        border-radius: 10px;
+        margin: 0 15px;
+    }
+    
+    .contact-container::before {
+        height: 3px;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+        border-left: none;
+        border-top: 4px solid transparent;
+    }
+    
+    .contact-item:hover {
+        transform: translateY(-3px);
+        border-left: none;
+        border-top: 4px solid var(--secondary);
+    }
+    
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin: 0 auto;
+    }
+    
+    .contact-text h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    
+    .contact-text p {
+        font-size: 0.9rem;
+    }
+    
+    .cv-download {
+        margin-top: 15px;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Version très petits écrans */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+    
+    .contact-item {
+        padding: 15px;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -1049,6 +1602,7 @@
                 <li><a href="#experience">Expérience</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#certificats">Certificats</a></li>
+                <li><a href="#achievements">Réalisations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1058,7 +1612,7 @@
     <section class="hero" id="home">
         <div class="container hero-content">
             <h1>Mustapha Baroudi <br> <span class="hero-highlight">Industrial engineer option business and data analytics (BDM).</span></h1>
-            <p></p>
+            <p>Étudiant en ingénierie industrielle passionné par l'innovation et la data analytics.</p>
             <a href="#about" class="btn">Découvrir mon univers</a>
         </div>
     </section>
@@ -1078,7 +1632,7 @@
                 <div class="about-text">
                     <h3>Qui suis-je ?</h3>
                     <p>Étudiant en cycle ingénieur en génie industriel à l'ESITH, avec une formation solide en Classes Préparatoires aux Grandes Écoles (filière MP).</p>
-                    <p> Doté de compétences techniques et analytiques, renforcées par des soft skills telles que la communication, the travail en équipe et la gestion du temps. Actuellement à la recherche de Stage d'observation pour développer d'avantage mes compétences en ingénierie et en logistique industrielle..</p>
+                    <p> Doté de compétences techniques et analytiques, renforcées par des soft skills telles que la communication, le travail en équipe et la gestion du temps. Actuellement à la recherche de Stage d'observation pour développer d'avantage mes compétences en ingénierie et en logistique industrielle.</p>
                     
                     <ul class="info-list">
                         <li><strong>Email :</strong> mustaphabaroudi833@gmail.com</li>
@@ -1268,29 +1822,111 @@
                     <h3><i class="fas fa-language"></i> Compétences Linguistiques</h3>
                     <div class="languages-container">
                         <div class="language-item">
-                            
+                            <div class="language-flag">🇲🇦</div>
                             <h3>Arabe</h3>
                             <p class="language-level">Langue maternelle</p>
                         </div>
                         <div class="language-item">
-                          
+                            <div class="language-flag">🇫🇷</div>
                             <h3>Français</h3>
                             <p class="language-level">Courant (C1/C2)</p>
                         </div>
                         <div class="language-item">
-                            
+                            <div class="language-flag">🇬🇧</div>
                             <h3>Anglais</h3>
                             <p class="language-level">B2 certifié</p>
                         </div>
                         <div class="language-item">
-                          
+                            <div class="language-flag">🇩🇪/🇪🇸</div>
                             <h3>Allemand/Espagnol</h3>
                             <p class="language-level">Notions de base</p>
                         </div>
                         <div class="language-item">
-                           
+                            <div class="language-flag">ⵣ</div>
                             <h3>Amazigh</h3>
                             <p class="language-level">Parlé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mon Expérience</h2>
+            </div>
+            
+            <div class="experience-container">
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="experience-date">Juillet 2025</div>
+                        <div class="experience-dot"></div>
+                        <div class="experience-content">
+                            <h3>Stage d'initiation</h3>
+                            <span class="experience-company">OCP</span>
+                            <p class="experience-description">
+                                Stage d'initiation au sein du géant industriel marocain OCP, 
+                                visant à découvrir les processus industriels et les défis 
+                                de l'industrie minière et chimique.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">Mars 2025 - Juin 2025</div>
+                        <div class="experience-dot"></div>
+                        <div class="experience-content">
+                            <h3>Secrétaire Générale</h3>
+                            <span class="experience-company">ESSOR Junior Entreprise</span>
+                            <p class="experience-description">
+                                Gestion administrative et coordination des activités de la junior entreprise.
+                                Organisation d'événements et gestion de la communication interne.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">  Juin 2025 -  Aujourd'hui</div>
+                        <div class="experience-dot"></div>
+                        <div class="experience-content">
+                            <h3>Responsable de Cellule Arabe</h3>
+                            <span class="experience-company">The Great Debaters</span>
+                            <p class="experience-description">
+                                Management de l'équipe de débat en langue arabe. Organisation 
+                                des sessions de formation et préparation des équipes pour les 
+                                compétitions de débat.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">Avril 2025 - Aujourd'hui</div>
+                        <div class="experience-dot"></div>
+                        <div class="experience-content">
+                            <h3>Responsable des Réseaux Sociaux</h3>
+                            <span class="experience-company">MUN (Model United Nations)</span>
+                            <p class="experience-description">
+                                Gestion de la présence digitale et des stratégies de communication 
+                                sur les réseaux sociaux. Création de contenu engageant et augmentation 
+                                de la visibilité de l'organisation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-date">Janvier 2025 - Juin 2025</div>
+                        <div class="experience-dot"></div>
+                        <div class="experience-content">
+                            <h3>Career Ambassador Permanent</h3>
+                            <span class="experience-company">ESITH Career Center</span>
+                            <p class="experience-description">
+                                Représentation du centre de carrière de l'ESITH. Organisation 
+                                d'événements de networking, ateliers de développement professionnel 
+                                et accompagnement des étudiants dans leur orientation de carrière.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1310,8 +1946,8 @@
                    <div class="project-content">
                         <h3>TIPE 2024 : Jeux et Sports</h3>
                         <p class="project-period"><i class="far fa-calendar-alt"></i> Février 2024 - Juillet 2024</p>
-                        <p class="project-description">Le projet TIPE de cette année a représenté une occasion précieuse d'appliquer les théories vues en cours à une expérience concrète. Ce travail m’a permis de renforcer ma confiance en moi devant un jury et de démontrer la valeur ajoutée de l’application des théories à des situations pratiques.</p>
-                        <p class="project-description">Ce projet a été couronné de succès, car il m'a permis de mettre en avant ma capacité à appliquer des théories complexes à des solutions pratiques. Cela a non seulement renforcé ma confiance en moi, mais m’a aussi permis de recevoir des retours positifs de la part du jury.</p>
+                        <p class="project-description">Le projet TIPE de cette année a représenté une occasion précieuse d'appliquer les théories vues en cours à une expérience concrète. Ce travail m'a permis de renforcer ma confiance en moi devant un jury et de démontrer la valeur ajoutée de l'application des théories à des situations pratiques.</p>
+                        <p class="project-description">Ce projet a été couronné de succès, car il m'a permis de mettre en avant ma capacité à appliquer des théories complexes à des solutions pratiques. Cela a non seulement renforcé ma confiance en moi, mais m'a aussi permis de recevoir des retours positifs de la part du jury.</p>
                         <div class="project-tags">
                             <span class="project-tag">Recherche Appliquée</span>
                             <span class="project-tag">Analyse</span>
@@ -1325,7 +1961,7 @@
                     <div class="project-content">
                         <h3>Détection de gaz avec capteur MQ-135</h3>
                         <p class="project-period"><i class="far fa-calendar-alt"></i> Janvier 2025 - Février 2025</p>
-                        <p class="project-description">Réalisation d’un système de détection de gaz pour mesurer la qualité de l’air et identifier des gaz nocifs tels que le CO, NH₃, CO₂, benzène, fumée et alcool. Le projet a consisté à concevoir un circuit électronique intégrant un Arduino Uno et une LED et un buzzer pour les alertesà programmer le microcontrôleur pour interpréter les signaux du capteur, et à simuler le fonctionnement sur TinkerCad. Ce projet a permis de développer des compétences en programmation en Arduino IDE et conception de systèmes d’alerte basés sur des capteurs.</p>
+                        <p class="project-description">Réalisation d'un système de détection de gaz pour mesurer la qualité de l'air et identifier des gaz nocifs tels que le CO, NH₃, CO₂, benzène, fumée et alcool. Le projet a consisté à concevoir un circuit électronique intégrant un Arduino Uno et une LED et un buzzer pour les alertes à programmer le microcontrôleur pour interpréter les signaux du capteur, et à simuler le fonctionnement sur TinkerCad. Ce projet a permis de développer des compétences en programmation en Arduino IDE et conception de systèmes d'alerte basés sur des capteurs.</p>
                        <div class="project-tags">
                             <span class="project-tag">Arduino</span>
                             <span class="project-tag">Électronique</span>
@@ -1457,22 +2093,80 @@
                         <span class="certificat-issuer">Six Sigma Institute</span>
                         <p class="certificat-date">Niveau avancé - Ceinture verte</p>
                     </div>
-                </div>
+    </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal pour l'agrandissement des images -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
+      <!-- Achievements Section -->
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes Réalisations Clés</h2>
+            </div>
+            
+            <div class="achievements-container">
+                <div class="achievement-item">
+                    <div class="achievement-img-container">
+                        <img src="DOC/hakathon.png" alt="Hackathon ESITH Laayoune" class="achievement-img">
+                        <div class="achievement-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="achievement-overlay">
+                            <h3>Gagnant du Hackathon</h3>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Gagnant du Hackathon ESITH Laayoune</h3>
+                        <p>Première place au hackathon organisé par ESITH à Laayoune, mettant en œuvre des solutions innovantes pour des défis industriels avec une équipe multidisciplinaire.</p>
+                        <span class="achievement-date">2024</span>
+                    </div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-img-container">
+                        <img src="DOC/Green Inovators Showdown.jpg" alt="Green Innovators Showdown" class="achievement-img">
+                        <div class="achievement-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="achievement-overlay">
+                            <h3>Participation Green Innovators</h3>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Participation aux Green Innovators Showdown ESITH</h3>
+                        <p>Participation active au concours d'innovation verte, présentant des solutions durables pour l'industrie avec une approche respectueuse de l'environnement.</p>
+                        <span class="achievement-date">2024</span>
+                    </div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-img-container">
+                        <img src="DOC/Job fair.png" alt="Career Ambassador Job Fair" class="achievement-img">
+                        <div class="achievement-zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="achievement-overlay">
+                            <h3>Career Ambassador</h3>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Career Ambassador en Job Fair ESITH</h3>
+                        <p>Rôle actif en tant qu'ambassadeur de carrière lors du salon de l'emploi d'ESITH, facilitant les connexions entre les étudiants et les recruteurs industriels.</p>
+                        <span class="achievement-date">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Me contacter</h2>
+              
+                <p class="contact-direct">Contactez-moi directement via les coordonnées ci-dessous :</p>
             </div>
             
             <div class="contact-container">
@@ -1508,26 +2202,11 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Votre nom" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Sujet" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Votre message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn">Envoyer le message</button>
-                    </form>
+                <!-- Bouton de téléchargement de CV -->
+                <div class="cv-download">
+                    <a href="chemin/vers/votre-cv.pdf" class="btn" download>
+                        <i class="fas fa-download"></i> Télécharger mon CV
+                    </a>
                 </div>
             </div>
         </div>
@@ -1572,10 +2251,23 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Mustapha Baroudi. Tous droits réservés.</p>
+                <p>&copy; 2024 Mustapha Baroudi. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Modal pour l'agrandissement des images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Modal pour l'agrandissement des images de réalisations -->
+    <div id="achievementModal" class="achievement-modal">
+        <span class="achievement-close">&times;</span>
+        <img class="achievement-modal-content" id="achievementModalImage">
+        <div id="achievementCaption" class="achievement-caption"></div>
+    </div>
 
     <script>
         // Navigation et défilement
@@ -1595,24 +2287,18 @@
         // Menu mobile
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
         });
         
         // Fermer le menu en cliquant sur un lien
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.add('fa-bars');
+                hamburger.querySelector('i').classList.remove('fa-times');
             });
         });
-        
-        // Formulaire de contact
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Merci pour votre message! Je vous répondrai très bientôt.');
-                contactForm.reset();
-            });
-        }
         
         // Animation des éléments de formation
         function animateFormationItems() {
@@ -1644,7 +2330,7 @@
         // Fonctionnalité de zoom sur les images de certificats
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
-        const closeModal = document.getElementsByClassName("close")[0];
+        const closeModal = document.querySelector("#imageModal .close");
         
         // Ajouter un écouteur d'événement à toutes les images de certificats
         document.querySelectorAll('.certificat-img').forEach(img => {
@@ -1671,6 +2357,100 @@
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && modal.style.display === "block") {
                 modal.style.display = "none";
+            }
+        });
+
+        // Animation des éléments d'expérience
+        function animateExperienceItems() {
+            const experienceItems = document.querySelectorAll('.experience-item');
+            
+            experienceItems.forEach((item, index) => {
+                const position = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (position < screenPosition) {
+                    item.style.opacity = 1;
+                    item.style.transform = 'translateX(0)';
+                }
+            });
+        }
+
+        // Initialiser l'opacité et la position des éléments
+        document.querySelectorAll('.experience-item').forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateX(-50px)';
+            item.style.transition = 'all 0.6s ease';
+        });
+
+        // Écouter l'événement de défilement
+        window.addEventListener('scroll', animateExperienceItems);
+        // Initialiser au chargement de la page
+        window.addEventListener('load', animateExperienceItems);
+
+        // Fonctionnalité de zoom sur les images de réalisations
+        const achievementModal = document.getElementById("achievementModal");
+        const achievementModalImg = document.getElementById("achievementModalImage");
+        const achievementCaption = document.getElementById("achievementCaption");
+        const closeAchievementModal = document.querySelector("#achievementModal .achievement-close");
+
+        // Fonction pour ouvrir la modal des réalisations
+        function openAchievementModal(imgElement) {
+            achievementModal.style.display = "block";
+            achievementModalImg.src = imgElement.src;
+            achievementModalImg.alt = imgElement.alt;
+            
+            // Récupérer le titre de la réalisation depuis l'overlay
+            const overlay = imgElement.parentElement.querySelector('.achievement-overlay h3');
+            if (overlay) {
+                achievementCaption.innerHTML = overlay.textContent;
+            } else {
+                // Fallback: utiliser le titre de la carte
+                const title = imgElement.closest('.achievement-item').querySelector('.achievement-content h3');
+                if (title) {
+                    achievementCaption.innerHTML = title.textContent;
+                } else {
+                    achievementCaption.innerHTML = imgElement.alt;
+                }
+            }
+        }
+
+        // Ajouter un écouteur d'événement à toutes les images de réalisations
+        document.querySelectorAll('.achievement-img').forEach(img => {
+            img.addEventListener('click', function() {
+                openAchievementModal(this);
+            });
+        });
+
+        // Ajouter également l'écouteur aux icônes de zoom
+        document.querySelectorAll('.achievement-zoom-icon').forEach(icon => {
+            // Permettre les clics sur l'icône
+            icon.style.pointerEvents = 'auto';
+            
+            icon.addEventListener('click', function(e) {
+                e.stopPropagation(); // Empêcher la propagation à l'image
+                const img = this.parentElement.querySelector('.achievement-img');
+                if (img) {
+                    openAchievementModal(img);
+                }
+            });
+        });
+
+        // Fermer la modal en cliquant sur la croix
+        closeAchievementModal.addEventListener('click', function() {
+            achievementModal.style.display = "none";
+        });
+
+        // Fermer la modal en cliquant en dehors de l'image
+        window.addEventListener('click', function(event) {
+            if (event.target == achievementModal) {
+                achievementModal.style.display = "none";
+            }
+        });
+
+        // Fermer la modal avec la touche Échap
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && achievementModal.style.display === "block") {
+                achievementModal.style.display = "none";
             }
         });
     </script>
