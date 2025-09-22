@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Professionnel</title>
     <link rel="icon" type="image/png" href="DOC/LOGO.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -433,12 +434,13 @@
         }
         
         /* Skills Section */
+        
         .skills-categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 50px;
-            margin-right: 0px;
+            
         }
         
         .skills-category {
@@ -565,6 +567,7 @@
         .experience-container {
             position: relative;
             padding: 40px 0;
+            background: linear-gradient(135deg, rgba(59, 85, 109, 0.05) 0%, rgba(95, 194, 186, 0.05) 100%);
         }
         
         .experience-timeline {
@@ -780,8 +783,8 @@
         }
         
         /* Certificats Section */
-        .certificats-section {
-            background: linear-gradient(135deg, rgba(59, 85, 109, 0.05) 0%, rgba(95, 194, 186, 0.05) 100%);
+        .certificats-section ,.section-contact {
+              background: linear-gradient(135deg, rgba(59, 85, 109, 0.05) 0%, rgba(95, 194, 186, 0.05) 100%);
             padding: 80px 0;
         }
         
@@ -875,7 +878,6 @@
         /* Achievements Section */
         .achievements-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, rgba(59, 85, 109, 0.03) 0%, rgba(95, 194, 186, 0.03) 100%);
         }
 
         .achievements-container {
@@ -1172,19 +1174,22 @@
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-left: 4px solid var(--secondary);
+
         }
         
         .contact-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--secondary);
+            background: var(--primary);
             color: white;
             border-radius: 50%;
             font-size: 1.5rem;
             flex-shrink: 0;
+          
+            color: white;
         }
         
         .contact-text h3 {
@@ -1241,36 +1246,8 @@
             }
         }
         /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-content h3::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            background: var(--secondary);
-            bottom: 0;
-            left: 0;
-        }
-        
+       
+      
         .social-links {
             display: flex;
             margin-top: 20px;
@@ -1491,95 +1468,99 @@
             }
         }
 
-        /* Version mobile */
+         /* Améliorations pour très petits écrans */
+        @media (max-width: 360px) {
+            .contact-container {
+                padding: 25px 15px;
+                border-radius: 15px;
+            }
+            
+            .contact-item {
+                padding: 18px 12px;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+        }
+        /* Version mobile pour la section compétences */
 @media (max-width: 768px) {
-    .contact-direct {
-        font-size: 0.9rem;
+    .Conception-section {
+        margin-right: 0 !important;
+        padding: 0 15px;
     }
     
-    .contact-container {
-        padding: 25px 20px;
-        gap: 25px;
-        border-radius: 10px;
-        margin: 0 15px;
-    }
-    
-    .contact-container::before {
-        height: 3px;
-    }
-    
-    .contact-info {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .contact-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-        padding: 20px;
-        border-left: none;
-        border-top: 4px solid transparent;
-    }
-    
-    .contact-item:hover {
-        transform: translateY(-3px);
-        border-left: none;
-        border-top: 4px solid var(--secondary);
-    }
-    
-    .contact-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-        margin: 0 auto;
-    }
-    
-    .contact-text h3 {
-        font-size: 1.1rem;
-        margin-bottom: 5px;
-    }
-    
-    .contact-text p {
-        font-size: 0.9rem;
-    }
-    
-    .cv-download {
-        margin-top: 15px;
-    }
-    
-    .btn {
+    .container-com {
         width: 100%;
-        justify-content: center;
-        padding: 12px 25px;
-        font-size: 1rem;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 10px;
     }
     
-    .btn:hover {
-        transform: translateY(-2px);
+    .skills-categories {
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .skills-category {
+        margin: 0;
+        padding: 20px 15px;
+        width: 100%;
+    }
+    
+    .skills-category h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .skill-item {
+        margin: 0 0 15px 0;
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .languages-container {
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .language-item {
+        margin: 0;
+        padding: 15px;
+        width: 100%;
     }
 }
 
 /* Version très petits écrans */
 @media (max-width: 480px) {
-    .contact-container {
-        padding: 20px 15px;
-        margin: 0 10px;
+    .Conception-section {
+        padding: 0 10px;
     }
     
-    .contact-item {
-        padding: 15px;
+    .container-com{
+        padding: 0 5px;
     }
     
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
+    .skills-category {
+        padding: 15px 10px;
     }
     
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.95rem;
+    .skill-item {
+        padding: 12px;
+    }
+    
+    .language-item {
+        padding: 12px;
     }
 }
     </style>
@@ -1700,8 +1681,8 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="section" id="skills">
-        <div class="container">
+    <section class="Conception-section" id="skills">
+        <div class="container" class="container-com">
             <div class="section-title">
                 <h2>Mes compétences</h2>
             </div>
@@ -2161,7 +2142,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section" id="contact">
+    <section class="section-contact" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Me contacter</h2>
@@ -2213,47 +2194,19 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-content">
-                    <h3>Mustapha Baroudi</h3>
-                    <p>Étudiant en ingénierie industrielle passionné par l'innovation et la data analytics.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-content">
-                    <h3>Liens rapides</h3>
-                    <ul>
-                        <li><a href="#home">Accueil</a></li>
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#formation">Formation</a></li>
-                        <li><a href="#projects">Projets</a></li>
-                        <li><a href="#certificats">Certificats</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-content">
-                    <h3>Compétences</h3>
-                    <ul>
-                        <li><a href="#skills">Ingénierie Industrielle</a></li>
-                        <li><a href="#skills">Data Analytics</a></li>
-                        <li><a href="#skills">Gestion de Projet</a></li>
-                        <li><a href="#skills">Développement Web</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2024 Mustapha Baroudi. Tous droits réservés.</p>
-            </div>
-        </div>
+    <footer class="bg-white text-[#142c48] py-6 border-t border-gray-200">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+        <p class="flex items-center justify-center gap-1 flex-wrap">
+          <span>Made with</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 fill-current animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
+          </svg>
+          <span>by</span>
+          <a href="mailto:ayaaatfaoui38@gmail.com" class="text-[#142c48] hover:text-[#acc9ea] transition-colors inline-flex items-center font-medium">
+            AATFAOUI AYA
+          </a>
+        </p>
+      </div>
     </footer>
 
     <!-- Modal pour l'agrandissement des images -->
