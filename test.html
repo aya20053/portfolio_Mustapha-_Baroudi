@@ -291,7 +291,7 @@
         
         /* Formation Section */
         .formation-section {
-            background: linear-gradient(135deg, rgba(59, 85, 109, 0.05) 0%, rgba(95, 194, 186, 0.05) 100%);
+        
             padding: 80px 0;
         }
         
@@ -566,8 +566,8 @@
         .experience-container {
             position: relative;
             padding: 40px 0;
-            background: linear-gradient(135deg, rgba(59, 85, 109, 0.05) 0%, rgba(95, 194, 186, 0.05) 100%);
-        }
+           
+        } 
         
         .experience-timeline {
             position: relative;
@@ -782,8 +782,8 @@
         }
         
         /* Certificats Section */
-        .certificats-section ,.section-contact {
-              background: linear-gradient(135deg, rgba(59, 85, 109, 0.05) 0%, rgba(95, 194, 186, 0.05) 100%);
+        .certificats-section  {
+             
             padding: 80px 0;
         }
         
@@ -1133,7 +1133,7 @@
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 50px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 40px;
@@ -1185,7 +1185,7 @@
             background: var(--primary);
             color: white;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             flex-shrink: 0;
           
             color: white;
@@ -1231,21 +1231,110 @@
         }
         
         /* Responsive */
-        @media (max-width: 768px) {
-            .contact-container {
-                padding: 30px 20px;
-            }
-            
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-        /* Footer */
-       
+      /* Version Mobile */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 15px;
+        gap: 25px;
+        margin: 10px;
+        border-radius: 10px;
+        width: calc(100% - 20px); /* Évite le débordement */
+        box-sizing: border-box; /* Inclut le padding dans la largeur */
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .contact-item {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .contact-text {
+        width: 100%;
+        word-wrap: break-word; /* Force le retour à la ligne */
+        overflow-wrap: break-word;
+    }
+    
+    .contact-text p {
+        font-size: 0.9rem;
+        word-break: break-all; /* Casse les longs mots comme les emails */
+    }
+    
+    /* Spécifique pour l'email */
+    .contact-item:nth-child(2) .contact-text p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        word-break: break-word;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        margin: 0 auto;
+    }
+    
+    .contact-text h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .contact-item:hover {
+        transform: none;
+    }
+}
+
+/* Version Très Petits Écrans */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .contact-item {
+        padding: 15px;
+    }
+    
+    .contact-text p {
+        font-size: 0.85rem;
+    }
+    
+    /* Email spécifique pour très petits écrans */
+    .contact-item:nth-child(2) .contact-text p {
+        font-size: 0.8rem;
+        letter-spacing: -0.2px; /* Réduit l'espacement si nécessaire */
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .contact-text h3 {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
       
         .social-links {
             display: flex;
